@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06D1CE09-90B7-4C65-97EB-F4D41AA372BA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ExamsSystem</RootNamespace>
+    <AssemblyName>ExamsSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AccountsBLL.cs" />
+    <Compile Include="BLL\ExamsBLL.cs" />
+    <Compile Include="BLL\QuestionsBLL.cs" />
+    <Compile Include="BLL\StudentsTestsBLL.cs" />
+    <Compile Include="BLL\TestsBLL.cs" />
+    <Compile Include="DAL\ExamsDAL.cs" />
+    <Compile Include="DAL\QuestionsDAL.cs" />
+    <Compile Include="DAL\StudentsTestsDAL.cs" />
+    <Compile Include="DAL\TestsDAL.cs" />
+    <Compile Include="MyForms\AccountDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\AccountDetailsForm.Designer.cs">
+      <DependentUpon>AccountDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\Admin\AccountManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\Admin\AccountManagerForm.Designer.cs">
+      <DependentUpon>AccountManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\Admin\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\Admin\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\CreateExamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\CreateExamForm.Designer.cs">
+      <DependentUpon>CreateExamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\CreateQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\CreateQuestionForm.Designer.cs">
+      <DependentUpon>CreateQuestionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\CreateTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\CreateTestForm.Designer.cs">
+      <DependentUpon>CreateTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\ExamDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\ExamDetailsForm.Designer.cs">
+      <DependentUpon>ExamDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\ExamManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\ExamManagerForm.Designer.cs">
+      <DependentUpon>ExamManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\FinishedDoTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\FinishedDoTestForm.Designer.cs">
+      <DependentUpon>FinishedDoTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\PasswordChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\PasswordChangeForm.Designer.cs">
+      <DependentUpon>PasswordChangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\QuestionDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\QuestionDetailsForm.Designer.cs">
+      <DependentUpon>QuestionDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\QuestionManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\QuestionManagerForm.Designer.cs">
+      <DependentUpon>QuestionManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\ReportManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\ReportManagerForm.Designer.cs">
+      <DependentUpon>ReportManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\ReviewDataTabeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\ReviewDataTabeForm.Designer.cs">
+      <DependentUpon>ReviewDataTabeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\TestDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\TestDetailsForm.Designer.cs">
+      <DependentUpon>TestDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\TestDoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\TestDoForm.Designer.cs">
+      <DependentUpon>TestDoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\TestDoingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\TestDoingForm.Designer.cs">
+      <DependentUpon>TestDoingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\TestMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\TestMainForm.Designer.cs">
+      <DependentUpon>TestMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\TestManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\TestManagerForm.Designer.cs">
+      <DependentUpon>TestManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\TestResultReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\TestResultReportForm.Designer.cs">
+      <DependentUpon>TestResultReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForms\TestsResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\TestsResultForm.Designer.cs">
+      <DependentUpon>TestsResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyObjects\Exams.cs" />
+    <Compile Include="MyObjects\HomeItem.cs" />
+    <Compile Include="MyObjects\PrintTest\ExamDataPrint.cs" />
+    <Compile Include="MyObjects\PrintTest\InformationPrint.cs" />
+    <Compile Include="MyObjects\PrintTest\TestPDFDecorator.cs" />
+    <Compile Include="MyObjects\PrintTest\TestPDFGenerate.cs" />
+    <Compile Include="MyObjects\PrintTest\TitlePrint.cs" />
+    <Compile Include="MyObjects\QuestionHandling.cs" />
+    <Compile Include="MyObjects\Question\CheckboxQuestions.cs" />
+    <Compile Include="MyObjects\Question\Questions.cs" />
+    <Compile Include="MyObjects\Question\RadioQuestions.cs" />
+    <Compile Include="MyObjects\Report\CreatorReport.cs" />
+    <Compile Include="MyObjects\Report\ExamDetailsReport.cs" />
+    <Compile Include="MyObjects\Report\ReportGenerate.cs" />
+    <Compile Include="MyObjects\Report\DataTableReport.cs" />
+    <Compile Include="MyObjects\Report\ReportDecorator.cs" />
+    <Compile Include="MyObjects\Report\TestDetailsReport.cs" />
+    <Compile Include="MyObjects\Report\TestResultStatisticsReport.cs" />
+    <Compile Include="MyObjects\StudentsTests.cs" />
+    <Compile Include="MyObjects\Subjects.cs" />
+    <Compile Include="MyObjects\Tests.cs" />
+    <Compile Include="MyObjects\User.cs" />
+    <Compile Include="Patterns\Builder\Account\AccountBuilder.cs" />
+    <Compile Include="Patterns\Builder\Account\MyBuilder.cs" />
+    <Compile Include="Patterns\Builder\Question\CheckboxQuestionBuilder.cs" />
+    <Compile Include="Patterns\Builder\Question\QuestionBuilder.cs" />
+    <Compile Include="Patterns\Builder\Question\RadioQuestionBuilder.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\ClearQuestionCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\ClearTextCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\CopyTextCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\CreateQuestionCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\EAQCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\EAQRemote.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\OffControlCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\OffItemCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\OnControlCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\OnItemMenuCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\PasteQuestionCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\PasteTextCommand.cs" />
+    <Compile Include="Patterns\Command\ExamsAndQuestions\ShowExamManagerCommand.cs" />
+    <Compile Include="Patterns\FactoryMethod\CastObjectFactory.cs" />
+    <Compile Include="Patterns\Observer\DoTest\DoTestObserver.cs" />
+    <Compile Include="Patterns\Observer\MyObserver.cs" />
+    <Compile Include="Patterns\Observer\Question\MyQuestionObserver.cs" />
+    <Compile Include="Patterns\Observer\Test\MyTestObserver.cs" />
+    <Compile Include="Patterns\StatePattern\DoingTest\DoTestContext.cs" />
+    <Compile Include="Patterns\StatePattern\DoingTest\DoTestState.cs" />
+    <Compile Include="Patterns\StatePattern\DoingTest\FirstQuestionState.cs" />
+    <Compile Include="Patterns\StatePattern\DoingTest\LastQuestionState.cs" />
+    <Compile Include="Patterns\StatePattern\DoingTest\MiddleQuestionState.cs" />
+    <Compile Include="Patterns\StatePattern\DoingTest\OverTimeState.cs" />
+    <Compile Include="Patterns\StatePattern\Test\AwayFromTestState.cs" />
+    <Compile Include="Patterns\StatePattern\Test\ClosedTestState.cs" />
+    <Compile Include="Patterns\StatePattern\Test\DefaultTestState.cs" />
+    <Compile Include="Patterns\StatePattern\Test\DoingTestState.cs" />
+    <Compile Include="Patterns\StatePattern\Test\FinishedTestState.cs" />
+    <Compile Include="Patterns\StatePattern\Test\SubmittedTestState.cs" />
+    <Compile Include="Patterns\StatePattern\Test\TestsContext.cs" />
+    <Compile Include="Patterns\StatePattern\Test\TestState.cs" />
+    <Compile Include="Patterns\StatePattern\Test\CheckingTestState.cs" />
+    <Compile Include="Patterns\StatePattern\Test\ValidTestState.cs" />
+    <Compile Include="Patterns\StrategyPattern\CastObject\AccountsCDRStrategy.cs" />
+    <Compile Include="Patterns\StrategyPattern\CastObject\CDRStrategy.cs" />
+    <Compile Include="Patterns\StrategyPattern\CastObject\ExamsCDRStrategy.cs" />
+    <Compile Include="Patterns\StrategyPattern\CastObject\MyCastObject.cs" />
+    <Compile Include="DAL\AccountsDAL.cs" />
+    <Compile Include="MyData\DataProvider.cs" />
+    <Compile Include="MyForms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyObjects\Accounts.cs" />
+    <Compile Include="MyTools\MyHashPass.cs" />
+    <Compile Include="Patterns\FactoryMethod\FormFactory.cs" />
+    <Compile Include="Patterns\StrategyPattern\CastObject\QuestionsCDRStrategy.cs" />
+    <Compile Include="Patterns\StrategyPattern\CastObject\StudentsTestsCDRStrategy.cs" />
+    <Compile Include="Patterns\StrategyPattern\CastObject\TestsCDRStrategy.cs" />
+    <Compile Include="Patterns\StrategyPattern\ValidForm\AnswerValidator.cs" />
+    <Compile Include="Patterns\StrategyPattern\ValidForm\EmailValidator.cs" />
+    <Compile Include="Patterns\StrategyPattern\ValidForm\MyValid.cs" />
+    <Compile Include="Patterns\StrategyPattern\ValidForm\PasswordValidator.cs" />
+    <Compile Include="Patterns\StrategyPattern\ValidForm\RolenameValidator.cs" />
+    <Compile Include="Patterns\StrategyPattern\ValidForm\QuestionValidator.cs" />
+    <Compile Include="Patterns\StrategyPattern\ValidForm\UsernameValidator.cs" />
+    <Compile Include="Patterns\TemplateMethod\ShowAdminHomeForm.cs" />
+    <Compile Include="Patterns\TemplateMethod\ShowHomeForm.cs" />
+    <Compile Include="Patterns\TemplateMethod\ShowOfficerHomeForm.cs" />
+    <Compile Include="Patterns\TemplateMethod\ShowStudentHomeForm.cs" />
+    <Compile Include="Patterns\TemplateMethod\ShowTeacherHomeForm.cs" />
+    <Compile Include="Patterns\Visitor\Questions\MarkerQuestion.cs" />
+    <Compile Include="Patterns\Visitor\Questions\QuestionsVisitor.cs" />
+    <Compile Include="Patterns\Visitor\Questions\SaveUserAnswer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MyForms\AccountDetailsForm.resx">
+      <DependentUpon>AccountDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\Admin\AccountManagerForm.resx">
+      <DependentUpon>AccountManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\Admin\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\CreateExamForm.resx">
+      <DependentUpon>CreateExamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\CreateQuestionForm.resx">
+      <DependentUpon>CreateQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\CreateTestForm.resx">
+      <DependentUpon>CreateTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\ExamDetailsForm.resx">
+      <DependentUpon>ExamDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\ExamManagerForm.resx">
+      <DependentUpon>ExamManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\FinishedDoTestForm.resx">
+      <DependentUpon>FinishedDoTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\PasswordChangeForm.resx">
+      <DependentUpon>PasswordChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\QuestionDetailsForm.resx">
+      <DependentUpon>QuestionDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\QuestionManagerForm.resx">
+      <DependentUpon>QuestionManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\ReportManagerForm.resx">
+      <DependentUpon>ReportManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\ReviewDataTabeForm.resx">
+      <DependentUpon>ReviewDataTabeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\TestDetailsForm.resx">
+      <DependentUpon>TestDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\TestDoForm.resx">
+      <DependentUpon>TestDoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\TestDoingForm.resx">
+      <DependentUpon>TestDoingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\TestMainForm.resx">
+      <DependentUpon>TestMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\TestManagerForm.resx">
+      <DependentUpon>TestManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\TestResultReportForm.resx">
+      <DependentUpon>TestResultReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\TestsResultForm.resx">
+      <DependentUpon>TestsResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\myfont\vuArial.ttf" />
+    <None Include="Resources\VietFontsWeb1_ttf.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\admin_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\teacher_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\student_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\report_manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\account_manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\exam_do.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\exam_manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\exam_result.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\password_change.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Patterns\Observer\Exam\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
